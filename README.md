@@ -29,6 +29,10 @@ Antes de começar, você precisará ter os seguintes softwares instalados:
    ```bash
    mvn spring-boot:run
 
+## Spring Boot dependencias
+
+<img align="center" alt="Spring Boot Initializr" height="auto" width="100%" src="Initializr.png">
+
 ## Endpoints
 A API expõe os seguintes endpoints:
 
