@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
+
 @RestController
 public class ProductController {
     @Autowired
@@ -37,15 +39,25 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity<List<ProductModel>> getAllProduct() {
-        return ResponseEntity.status(HttpStatus.OK).body(productRepository.findAll());
+        List<ProductModel> productsList = productRepository.findAll();
+
+        if(!productsList.isEmpty()){
+           for(ProductModel product: productsList){
+              UUID id = product.getIdProduct();
+              product.add(linkTo(methodOn(ProductController.class).getOneProduct(id)).withSelfRel());
+           }
+        }
+
+        return ResponseEntity.status(HttpStatus.OK).body(productsList);
     }
-    
+
     @GetMapping("/products/{id}")
     public ResponseEntity<Object> getOneProduct(@PathVariable(value = "id") UUID id) {
         Optional<ProductModel> productO = productRepository.findById(id);
         if (productO.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Product not found.");
         }
+        productO.get().add(linkTo(methodOn(ProductController.class).getAllProduct()).withRel("Products List"));
         return ResponseEntity.status(HttpStatus.OK).body(productO.get());
     }
 
