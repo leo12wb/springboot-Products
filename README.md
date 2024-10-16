@@ -1,6 +1,6 @@
-# API de Produtos - <img align="center" alt="SpringBoot" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original-wordmark.svg"> Spring Boot 3 
+# Microservice de Produtos - <img align="center" alt="SpringBoot" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original-wordmark.svg"> Spring Boot 3 
 
-Este projeto é uma API desenvolvida em Spring Boot 3 para gerenciar produtos. A API permite operações básicas como criação, leitura, atualização e exclusão de produtos.
+Este projeto é uma API desenvolvida em Spring Boot 3 para gerenciar produtos. O Microservice permite operações básicas como criação, leitura, atualização e exclusão de produtos.
 
 ## Pré-requisitos
 
