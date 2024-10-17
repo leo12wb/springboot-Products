@@ -2,6 +2,8 @@
 
 Este projeto é uma API desenvolvida em Spring Boot 3 para gerenciar produtos. O Microservice permite operações básicas como criação, leitura, atualização e exclusão de produtos.
 
+<img align="center" alt="Imegem Promocional" height="auto" width="100%" src="readme-img.png">
+
 ## Pré-requisitos
 
 Antes de começar, você precisará ter os seguintes softwares instalados:
