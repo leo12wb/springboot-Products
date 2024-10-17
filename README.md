@@ -29,6 +29,11 @@ Antes de começar, você precisará ter os seguintes softwares instalados:
    ```bash
    mvn spring-boot:run
 
+6. **Para usar o Docker execute**
+   ```bash
+   docker-compose up --build
+
+
 ## Spring Boot dependencias
 
 <img align="center" alt="Spring Boot Initializr" height="auto" width="100%" src="Initializr.png">
